@@ -1,0 +1,8 @@
+config.properties
+.env
+data/raw/*.pdf
+data/cache/embeddings/
+target/
+.idea/
+analysis/.venv/
+.claude/settings.local.json
