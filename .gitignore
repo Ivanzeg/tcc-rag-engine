@@ -1,6 +1,5 @@
 config.properties
 .env
-data/raw/*.pdf
 data/cache/embeddings/
 target/
 .idea/
