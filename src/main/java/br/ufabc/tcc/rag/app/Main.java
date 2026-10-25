@@ -41,6 +41,7 @@ public final class Main {
             case "prepare" -> prepare(config);
             case "validate-golden" -> validateGolden();
             case "search" -> search(config, args);
+            case "evaluate" -> evaluate(config, args);
             default -> System.out.println(args[0] + ": ainda não implementado");
         }
     }
@@ -91,6 +92,19 @@ public final class Main {
         String query = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
         try {
             new SearchCommand(config).run(query);
+        } catch (IllegalStateException e) {
+            System.out.println("Erro: " + e.getMessage());
+            System.exit(1);
+        }
+    }
+
+    private static void evaluate(Config config, String[] args) {
+        if (args.length != 2) {
+            System.out.println("Uso: evaluate <estrategia>");
+            System.exit(1);
+        }
+        try {
+            new EvaluateCommand(config).run(args[1]);
         } catch (IllegalStateException e) {
             System.out.println("Erro: " + e.getMessage());
             System.exit(1);
