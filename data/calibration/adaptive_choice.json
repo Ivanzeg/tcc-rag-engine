@@ -1,0 +1,83 @@
+{
+  "percentile" : 15,
+  "tau" : 0.4351798948929677,
+  "percentileMethod" : "linear (Hyndman-Fan tipo 7, padrão do numpy.percentile)",
+  "fixedMeanChars" : 900.8518518518518,
+  "fixedChunks" : 81,
+  "fixedChunksSha256" : "e94caaae721306afdd00c4b3b312240f4bb43b166ad630a038afc0386bf0ee2a",
+  "maxWords" : 500,
+  "embeddingModel" : "text-embedding-3-small",
+  "corpusSha256" : "24cead1556c9fa52bbca9dd4899f80f54f42b23472820fbd3e4cc6a3533fffed",
+  "units" : 459,
+  "candidates" : [ {
+    "percentile" : 5,
+    "tau" : 0.38179220147588705,
+    "chunks" : 37,
+    "meanChars" : 1935.1081081081081,
+    "meanWords" : 309.05405405405406,
+    "distance" : 1034.2562562562562
+  }, {
+    "percentile" : 10,
+    "tau" : 0.41230431255226435,
+    "chunks" : 54,
+    "meanChars" : 1325.5925925925926,
+    "meanWords" : 211.75925925925927,
+    "distance" : 424.74074074074076
+  }, {
+    "percentile" : 15,
+    "tau" : 0.4351798948929677,
+    "chunks" : 75,
+    "meanChars" : 954.1466666666666,
+    "meanWords" : 152.46666666666667,
+    "distance" : 53.2948148148148
+  }, {
+    "percentile" : 20,
+    "tau" : 0.45842978074504237,
+    "chunks" : 95,
+    "meanChars" : 753.0631578947368,
+    "meanWords" : 120.36842105263158,
+    "distance" : 147.78869395711502
+  }, {
+    "percentile" : 25,
+    "tau" : 0.4756474229752711,
+    "chunks" : 116,
+    "meanChars" : 616.551724137931,
+    "meanWords" : 98.57758620689656,
+    "distance" : 284.3001277139208
+  }, {
+    "percentile" : 30,
+    "tau" : 0.49097059766495454,
+    "chunks" : 139,
+    "meanChars" : 514.3669064748201,
+    "meanWords" : 82.26618705035972,
+    "distance" : 386.48494537703175
+  }, {
+    "percentile" : 35,
+    "tau" : 0.5076287617410858,
+    "chunks" : 161,
+    "meanChars" : 443.944099378882,
+    "meanWords" : 71.0248447204969,
+    "distance" : 456.90775247296983
+  }, {
+    "percentile" : 40,
+    "tau" : 0.5229766491357558,
+    "chunks" : 184,
+    "meanChars" : 388.32608695652175,
+    "meanWords" : 62.14673913043478,
+    "distance" : 512.5257648953301
+  }, {
+    "percentile" : 45,
+    "tau" : 0.5379051962074507,
+    "chunks" : 207,
+    "meanChars" : 345.0676328502415,
+    "meanWords" : 55.24154589371981,
+    "distance" : 555.7842190016104
+  }, {
+    "percentile" : 50,
+    "tau" : 0.5508624155803483,
+    "chunks" : 230,
+    "meanChars" : 310.46086956521737,
+    "meanWords" : 49.71739130434783,
+    "distance" : 590.3909822866344
+  } ]
+}

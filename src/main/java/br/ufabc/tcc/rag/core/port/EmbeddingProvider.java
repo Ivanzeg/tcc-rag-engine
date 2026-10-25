@@ -10,6 +10,6 @@ public interface EmbeddingProvider {
     
     float[] embed(String text);
 
-    List<float[]> embedAll(List<String> texts);// textos de chunks, unidades ou consultas
+    List<float[]> embedAll(List<String> texts);
     
 }

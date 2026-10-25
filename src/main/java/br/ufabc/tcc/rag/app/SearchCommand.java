@@ -1,7 +1,5 @@
 package br.ufabc.tcc.rag.app;
 
-import br.ufabc.tcc.rag.adapters.Sha256;
-import br.ufabc.tcc.rag.adapters.chunking.FixedChunker;
 import br.ufabc.tcc.rag.adapters.embedding.OpenAiEmbeddingProvider;
 import br.ufabc.tcc.rag.adapters.vector.PgVectorIndex;
 import br.ufabc.tcc.rag.core.domain.Chunk;
@@ -25,28 +23,25 @@ import java.util.stream.Collectors;
 
 public final class SearchCommand {
 
-    private static final String DOCUMENT_ID = "lgpd-13709-2018";
-    private static final String DOCUMENT_VERSION = "v1";
+    private static final String STRATEGY = "fixed";
     private static final int PREVIEW_LENGTH = 120;
     private static final Path SQL_FILE = Path.of("target", "last_search.sql");
 
+    private final ExperimentServices services;
     private final Config config;
 
-    public SearchCommand(Config config) {
-        this.config = config;
+    public SearchCommand(ExperimentServices services) {
+        this.services = services;
+        this.config = services.config();
     }
 
     public void run(String query) {
-        Corpus corpus = new CorpusLoader().load(Path.of("data", "corpus"));
-        OpenAiEmbeddingProvider embeddings = new OpenAiEmbeddingProvider(
-                config.openAiApiKey(), config.openAiEmbeddingModel(), Path.of("data", "cache", "embeddings"));
-        PgVectorIndex index = new PgVectorIndex(
-                config.dbUrl(), config.dbUser(), config.dbPassword(), embeddings.dimension(),
-                new PgVectorIndex.Settings(DOCUMENT_ID, DOCUMENT_VERSION, Sha256.hex(corpus.canonicalText()),
-                        config.openAiEmbeddingModel()),
-                Path.of("results", "environment.txt"));
-        Chunker chunker = new FixedChunker();
-        List<Chunk> chunks = new StrategyIndexer().index(chunker, corpus, embeddings, index, Path.of("data", "chunks"));
+        Corpus corpus = services.corpus();
+        OpenAiEmbeddingProvider embeddings = services.embeddings();
+        PgVectorIndex index = services.index();
+        Chunker chunker = services.chunkerFor(STRATEGY, embeddings);
+        List<Chunk> chunks = new StrategyIndexer().index(chunker, corpus, embeddings, index,
+                ExperimentServices.CHUNKS_DIR);
 
         float[] queryVector = embeddings.embed(query);
         int k = config.experimentK();

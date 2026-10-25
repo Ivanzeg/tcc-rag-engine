@@ -42,7 +42,27 @@ public final class Main {
             case "validate-golden" -> validateGolden();
             case "search" -> search(config, args);
             case "evaluate" -> evaluate(config, args);
+            case "calibrate-adaptive" -> calibrateAdaptive(config);
+            case "run-all" -> runAll(config);
             default -> System.out.println(args[0] + ": ainda não implementado");
+        }
+    }
+
+    private static void calibrateAdaptive(Config config) {
+        try {
+            new CalibrateAdaptiveCommand(new ExperimentServices(config)).run();
+        } catch (IllegalStateException e) {
+            System.out.println("Erro: " + e.getMessage());
+            System.exit(1);
+        }
+    }
+
+    private static void runAll(Config config) {
+        try {
+            new RunAllCommand(new ExperimentServices(config)).run();
+        } catch (IllegalStateException e) {
+            System.out.println("Erro: " + e.getMessage());
+            System.exit(1);
         }
     }
 
@@ -91,7 +111,7 @@ public final class Main {
         }
         String query = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
         try {
-            new SearchCommand(config).run(query);
+            new SearchCommand(new ExperimentServices(config)).run(query);
         } catch (IllegalStateException e) {
             System.out.println("Erro: " + e.getMessage());
             System.exit(1);
@@ -104,7 +124,7 @@ public final class Main {
             System.exit(1);
         }
         try {
-            new EvaluateCommand(config).run(args[1]);
+            new EvaluateCommand(new ExperimentServices(config)).run(args[1]);
         } catch (IllegalStateException e) {
             System.out.println("Erro: " + e.getMessage());
             System.exit(1);

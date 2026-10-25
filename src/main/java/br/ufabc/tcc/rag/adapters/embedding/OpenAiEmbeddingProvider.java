@@ -42,6 +42,10 @@ public final class OpenAiEmbeddingProvider implements EmbeddingProvider {
         return model.dimension();
     }
 
+    public boolean isCached(String text) {
+        return readCache(text) != null;
+    }
+
     @Override
     public float[] embed(String text) {
         return embedAll(List.of(text)).get(0);
