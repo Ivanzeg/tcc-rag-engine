@@ -1,0 +1,4 @@
+estrategia,n_chunks,caracteres_media,caracteres_desvio_padrao,caracteres_minimo,caracteres_maximo,palavras_media,index_seconds,nota_index_seconds
+Fixo (linha de base),81,900.851852,81.751164,584,1000,143.370370,0.343000,Todos os embeddings vieram do cache em disco (nenhuma chamada à API); index_seconds não inclui tempo de rede.
+Semântico,27,2652.185185,711.523989,499,3264,423.518519,3.241000,26 de 27 embeddings vieram da API e 1 do cache; index_seconds inclui tempo de rede.
+Adaptativo,75,954.146667,920.927128,30,3251,152.466667,1.975000,63 de 75 embeddings de chunks vieram da API e 12 do cache; index_seconds inclui tempo de rede.

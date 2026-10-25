@@ -1,0 +1,4 @@
+comparacao,n_consultas,diferenca_media_f1,ic95_inferior,ic95_superior
+Adaptativo − Fixo (linha de base),24,-0.144981,-0.221199,-0.062874
+Semântico − Fixo (linha de base),24,-0.119438,-0.212793,-0.025356
+Adaptativo − Semântico,24,-0.025542,-0.122058,0.073240

@@ -1,0 +1,4 @@
+estrategia,f1_global,estrato_menor_revocacao,revocacao_do_estrato_menor,queda_f1_terminológico_vs_factual,queda_revocacao_terminológico_vs_factual,queda_f1_abrangente_vs_factual,queda_revocacao_abrangente_vs_factual,latencia_mediana_ms,latencia_p95_ms,embedding_inputs
+Fixo (linha de base),0.352341,Terminológico,0.625000,0.083333,0.250000,-0.265356,0.114583,19.174169,26.759352,81
+Semântico,0.232903,Abrangente,0.427083,0.083333,0.250000,-0.032041,0.322917,17.575652,20.525521,27
+Adaptativo,0.207360,Terminológico,0.250000,0.083333,0.250000,-0.205414,-0.125000,15.533078,17.114696,534
