@@ -1,0 +1,243 @@
+[
+  {
+    "id": "F01",
+    "stratum": "FACTUAL",
+    "question": "O que a lei define tecnicamente como um \"dado pessoal\"?",
+    "evidence": [
+      "dado pessoal: informação relacionada a pessoa natural identificada ou identificável;"
+    ],
+    "note": "art. 5º, inciso I"
+  },
+  {
+    "id": "F02",
+    "stratum": "FACTUAL",
+    "question": "Quais informações específicas sobre mim são classificadas como \"dados pessoais sensíveis\"?",
+    "evidence": [
+      "dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural;"
+    ],
+    "note": "art. 5º, inciso II"
+  },
+  {
+    "id": "F03",
+    "stratum": "FACTUAL",
+    "question": "Qual é a função exata da figura chamada de \"encarregado\"?",
+    "evidence": [
+      "encarregado: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Agência Nacional de Proteção de Dados (ANPD);"
+    ],
+    "note": "art. 5º, inciso VIII"
+  },
+  {
+    "id": "F04",
+    "stratum": "FACTUAL",
+    "question": "De que forma eu posso cancelar um consentimento que já dei para usarem meus dados?",
+    "evidence": [
+      "O consentimento pode ser revogado a qualquer momento mediante manifestação expressa do titular, por procedimento gratuito e facilitado, ratificados os tratamentos realizados sob amparo do consentimento anteriormente manifestado enquanto não houver requerimento de eliminação, nos termos do inciso VI do caput do art. 18 desta Lei."
+    ],
+    "note": "art. 8º, §5º"
+  },
+  {
+    "id": "F05",
+    "stratum": "FACTUAL",
+    "question": "Qual é o momento exato em que o tratamento dos meus dados deve ser encerrado em relação à finalidade deles?",
+    "evidence": [
+      "verificação de que a finalidade foi alcançada ou de que os dados deixaram de ser necessários ou pertinentes ao alcance da finalidade específica almejada;"
+    ],
+    "note": "art. 15, inciso I"
+  },
+  {
+    "id": "F06",
+    "stratum": "FACTUAL",
+    "question": "O que eu posso exigir da empresa caso eu queira levar meus dados para outro prestador de serviços?",
+    "evidence": [
+      "portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da autoridade nacional, observados os segredos comercial e industrial;"
+    ],
+    "note": "art. 18, inciso V"
+  },
+  {
+    "id": "F07",
+    "stratum": "FACTUAL",
+    "question": "Quem responde pelos danos se ocorrer um vazamento dos meus dados por falta de medidas de segurança?",
+    "evidence": [
+      "Responde pelos danos decorrentes da violação da segurança dos dados o controlador ou o operador que, ao deixar de adotar as medidas de segurança previstas no art. 46 desta Lei, der causa ao dano."
+    ],
+    "note": "art. 44, parágrafo único"
+  },
+  {
+    "id": "F08",
+    "stratum": "FACTUAL",
+    "question": "Qual é o valor máximo da multa simples que uma empresa pode tomar por cometer uma infração?",
+    "evidence": [
+      "multa simples, de até 2% (dois por cento) do faturamento da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no seu último exercício, excluídos os tributos, limitada, no total, a R$ 50.000.000,00 (cinquenta milhões de reais) por infração;"
+    ],
+    "note": "art. 52, inciso II"
+  },
+
+  {
+    "id": "T01",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Qual é o nome técnico que a lei usa quando um banco de dados apaga de vez as minhas informações, não importando o método usado?",
+    "evidence": [
+      "eliminação: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado;"
+    ],
+    "note": "termo evitado: eliminação (art. 5º, inciso XIV)"
+  },
+  {
+    "id": "T02",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Se houver um vazamento que colocar meus dados em risco, a empresa é obrigada a avisar alguém?",
+    "evidence": [
+      "O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares."
+    ],
+    "note": "termo evitado: incidente de segurança (art. 48, caput)"
+  },
+  {
+    "id": "T03",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Como a lei chama a pessoa ou empresa que toma as decisões sobre o que fazer com os meus dados?",
+    "evidence": [
+      "controlador: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais;"
+    ],
+    "note": "termo evitado: controlador (art. 5º, inciso VI)"
+  },
+  {
+    "id": "T04",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Qual é o termo que a lei usa para me chamar, já que sou a pessoa dona das informações tratadas?",
+    "evidence": [
+      "titular: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento;"
+    ],
+    "note": "termo evitado: titular (art. 5º, inciso V)"
+  },
+  {
+    "id": "T05",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Qual é o nome do processo técnico que torna impossível ligar um dado de volta a mim, usando os meios disponíveis na época?",
+    "evidence": [
+      "anonimização: utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo;"
+    ],
+    "note": "termo evitado: anonimização (art. 5º, inciso XI)"
+  },
+  {
+    "id": "T06",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Como se chama a pausa temporária no uso dos meus dados, em que a empresa apenas os guarda sem mexer neles?",
+    "evidence": [
+      "bloqueio: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados;"
+    ],
+    "note": "termo evitado: bloqueio (art. 5º, inciso XIII)"
+  },
+  {
+    "id": "T07",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Se um sistema de computador, sozinho, decidir algo que me afeta, como negar um crédito, eu posso pedir para uma pessoa revisar essa decisão?",
+    "evidence": [
+      "O titular dos dados tem direito a solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais que afetem seus interesses, incluídas as decisões destinadas a definir o seu perfil pessoal, profissional, de consumo e de crédito ou os aspectos de sua personalidade."
+    ],
+    "note": "termo evitado: tratamento automatizado (art. 20, caput)"
+  },
+  {
+    "id": "T08",
+    "stratum": "TERMINOLOGICAL",
+    "question": "Como a lei chama quem efetivamente mexe nos meus dados, seguindo as ordens de quem decide sobre eles?",
+    "evidence": [
+      "operador: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador;"
+    ],
+    "note": "termo evitado: operador (art. 5º, inciso VII)"
+  },
+
+  {
+    "id": "C01",
+    "stratum": "COMPREHENSIVE",
+    "question": "Como a lei diferencia o tratamento de dados feitos por mim para uso pessoal e os dados que passaram por um processo técnico para esconder a identidade?",
+    "evidence": [
+      "realizado por pessoa natural para fins exclusivamente particulares e não econômicos;",
+      "Os dados anonimizados não serão considerados dados pessoais para os fins desta Lei, salvo quando o processo de anonimização ao qual foram submetidos for revertido, utilizando exclusivamente meios próprios, ou quando, com esforços razoáveis, puder ser revertido.",
+      "A determinação do que seja razoável deve levar em consideração fatores objetivos, tais como custo e tempo necessários para reverter o processo de anonimização, de acordo com as tecnologias disponíveis, e a utilização exclusiva de meios próprios."
+    ],
+    "note": "art. 4º, inciso I; art. 12, caput e §1º"
+  },
+  {
+    "id": "C02",
+    "stratum": "COMPREHENSIVE",
+    "question": "O que define que o tratamento dos meus dados chegou ao fim e em quais situações legais a empresa pode continuar guardando essas informações depois disso?",
+    "evidence": [
+      "fim do período de tratamento;",
+      "comunicação do titular, inclusive no exercício de seu direito de revogação do consentimento conforme disposto no § 5o do art. 8o desta Lei, resguardado o interesse público; ou",
+      "I - cumprimento de obrigação legal ou regulatória pelo controlador;",
+      "uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados."
+    ],
+    "note": "art. 15, incisos II e III; art. 16, incisos I e IV"
+  },
+  {
+    "id": "C03",
+    "stratum": "COMPREHENSIVE",
+    "question": "Quais direitos eu tenho para checar a existência e corrigir meus dados, e qual é o prazo que a empresa tem para me dar uma declaração completa e detalhada sobre eles?",
+    "evidence": [
+      "confirmação da existência de tratamento;",
+      "correção de dados incompletos, inexatos ou desatualizados;",
+      "O requerimento referido no § 3o deste artigo será atendido sem custos para o titular, nos prazos e nos termos previstos em regulamento.",
+      "por meio de declaração clara e completa, que indique a origem dos dados, a inexistência de registro, os critérios utilizados e a finalidade do tratamento, observados os segredos comercial e industrial, fornecida no prazo de até 15 (quinze) dias, contado da data do requerimento do titular."
+    ],
+    "note": "art. 18, incisos I e III, §5º; art. 19, inciso II"
+  },
+  {
+    "id": "C04",
+    "stratum": "COMPREHENSIVE",
+    "question": "Como a lei protege as informações das crianças e o que as empresas estão proibidas de fazer em relação ao fornecimento excessivo de dados ou vícios na autorização?",
+    "evidence": [
+      "O tratamento de dados pessoais de crianças e de adolescentes deverá ser realizado em seu melhor interesse, nos termos deste artigo e da legislação pertinente.",
+      "O tratamento de dados pessoais de crianças deverá ser realizado com o consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal.",
+      "Os controladores não deverão condicionar a participação dos titulares de que trata o § 1o deste artigo em jogos, aplicações de internet ou outras atividades ao fornecimento de informações pessoais além das estritamente necessárias à atividade.",
+      "É vedado o tratamento de dados pessoais mediante vício de consentimento."
+    ],
+    "note": "art. 14, caput, §1º e §4º; art. 8º, §3º"
+  },
+  {
+    "id": "C05",
+    "stratum": "COMPREHENSIVE",
+    "question": "Quais são as regras e as exceções que permitem que órgãos do governo repassem minhas informações cadastradas para empresas privadas?",
+    "evidence": [
+      "É vedado ao Poder Público transferir a entidades privadas dados pessoais constantes de bases de dados a que tenha acesso, exceto:",
+      "quando houver previsão legal ou a transferência for respaldada em contratos, convênios ou instrumentos congêneres; ou",
+      "A comunicação ou o uso compartilhado de dados pessoais de pessoa jurídica de direito público a pessoa de direito privado será informado à autoridade nacional e dependerá de consentimento do titular, exceto:",
+      "nos casos de uso compartilhado de dados, em que será dada publicidade nos termos do inciso I do caput do art. 23 desta Lei; ou"
+    ],
+    "note": "art. 26, §1º e §1º-IV; art. 27, caput e inciso II"
+  },
+  {
+    "id": "C06",
+    "stratum": "COMPREHENSIVE",
+    "question": "Quais princípios e medidas de segurança as empresas devem adotar e o que elas devem fazer caso os sistemas sejam invadidos e ocorra um vazamento?",
+    "evidence": [
+      "segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;",
+      "Os agentes de tratamento devem adotar medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou qualquer forma de tratamento inadequado ou ilícito.",
+      "O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares.",
+      "Responde pelos danos decorrentes da violação da segurança dos dados o controlador ou o operador que, ao deixar de adotar as medidas de segurança previstas no art. 46 desta Lei, der causa ao dano."
+    ],
+    "note": "art. 6º, inciso VII; art. 46, caput; art. 48, caput; art. 44, parágrafo único"
+  },
+  {
+    "id": "C07",
+    "stratum": "COMPREHENSIVE",
+    "question": "Sob quais condições as minhas informações podem ser transferidas para outro país e o que a autoridade nacional avalia sobre esse país de destino?",
+    "evidence": [
+      "para países ou organismos internacionais que proporcionem grau de proteção de dados pessoais adequado ao previsto nesta Lei;",
+      "quando o titular tiver fornecido o seu consentimento específico e em destaque para a transferência, com informação prévia sobre o caráter internacional da operação, distinguindo claramente esta de outras finalidades; ou",
+      "O nível de proteção de dados do país estrangeiro ou do organismo internacional mencionado no inciso I do caput do art. 33 desta Lei será avaliado pela autoridade nacional, que levará em consideração:",
+      "a existência de garantias judiciais e institucionais para o respeito aos direitos de proteção de dados pessoais; e"
+    ],
+    "note": "art. 33, incisos I e VIII; art. 34, caput e inciso V"
+  },
+  {
+    "id": "C08",
+    "stratum": "COMPREHENSIVE",
+    "question": "Como é formado o Conselho Diretor da Agência Nacional de Proteção de Dados e como acontece a escolha e a demissão de seus membros?",
+    "evidence": [
+      "O Conselho Diretor da ANPD será composto de 5 (cinco) diretores, incluído o Diretor-Presidente.",
+      "Os membros do Conselho Diretor da ANPD serão escolhidos pelo Presidente da República e por ele nomeados, após aprovação pelo Senado Federal, nos termos da alínea \"f \" do inciso III do art. 52 da Constituição Federal, e ocuparão cargo em comissão do Grupo-Direção e Assessoramento Superiores - DAS, no mínimo, de nível 5.",
+      "Os membros do Conselho Diretor somente perderão seus cargos em virtude de renúncia, condenação judicial transitada em julgado ou pena de demissão decorrente de processo administrativo disciplinar.",
+      "Os ocupantes dos cargos em comissão e das funções de confiança da ANPD serão indicados pelo Conselho Diretor e nomeados ou designados pelo Diretor-Presidente."
+    ],
+    "note": "art. 55-D, caput e §1º; art. 55-E, caput; art. 55-I, caput"
+  }
+]

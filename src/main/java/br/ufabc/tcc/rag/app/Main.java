@@ -3,6 +3,8 @@ package br.ufabc.tcc.rag.app;
 import br.ufabc.tcc.rag.adapters.corpus.CorpusBuild;
 import br.ufabc.tcc.rag.adapters.corpus.CorpusPipeline;
 import br.ufabc.tcc.rag.adapters.corpus.CorpusWriter;
+import br.ufabc.tcc.rag.adapters.corpus.GoldenResolver;
+import br.ufabc.tcc.rag.adapters.corpus.GoldenValidationException;
 import br.ufabc.tcc.rag.adapters.corpus.InspectionPrinter;
 import br.ufabc.tcc.rag.adapters.corpus.PdfTextExtractor;
 import java.nio.file.Path;
@@ -36,6 +38,7 @@ public final class Main {
         switch (args[0]) {
             case "inspect-pdf" -> inspectPdf(config);
             case "prepare" -> prepare(config);
+            case "validate-golden" -> validateGolden();
             default -> System.out.println(args[0] + ": ainda não implementado");
         }
     }
@@ -62,6 +65,20 @@ public final class Main {
         Map<String, Object> stats = new CorpusWriter().write(Path.of("data", "corpus"), build, pdf, startPage, endPage);
         System.out.println();
         System.out.println("Corpus gravado em data/corpus. Estatísticas: " + stats);
+    }
+
+    private static void validateGolden() {
+        try {
+            new GoldenResolver().resolve(
+                    Path.of("data", "golden", "queries.json"),
+                    Path.of("data", "corpus", "units.jsonl"),
+                    Path.of("data", "golden", "queries_resolved.json"),
+                    System.out);
+            System.out.println("Gravado em data/golden/queries_resolved.json");
+        } catch (GoldenValidationException e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
     }
 
     private static void printPage(int number, List<String> lines) {
