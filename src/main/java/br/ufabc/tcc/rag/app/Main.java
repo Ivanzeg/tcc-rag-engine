@@ -8,6 +8,7 @@ import br.ufabc.tcc.rag.adapters.corpus.GoldenValidationException;
 import br.ufabc.tcc.rag.adapters.corpus.InspectionPrinter;
 import br.ufabc.tcc.rag.adapters.corpus.PdfTextExtractor;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +40,7 @@ public final class Main {
             case "inspect-pdf" -> inspectPdf(config);
             case "prepare" -> prepare(config);
             case "validate-golden" -> validateGolden();
+            case "search" -> search(config, args);
             default -> System.out.println(args[0] + ": ainda não implementado");
         }
     }
@@ -77,6 +79,20 @@ public final class Main {
             System.out.println("Gravado em data/golden/queries_resolved.json");
         } catch (GoldenValidationException e) {
             System.out.println(e.getMessage());
+            System.exit(1);
+        }
+    }
+
+    private static void search(Config config, String[] args) {
+        if (args.length < 2) {
+            System.out.println("Uso: search \"texto da consulta\"");
+            System.exit(1);
+        }
+        String query = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
+        try {
+            new SearchCommand(config).run(query);
+        } catch (IllegalStateException e) {
+            System.out.println("Erro: " + e.getMessage());
             System.exit(1);
         }
     }
