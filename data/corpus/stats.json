@@ -1,0 +1,26 @@
+{
+  "units" : 459,
+  "provisions" : 435,
+  "headings" : 24,
+  "articles" : 73,
+  "chapters" : 10,
+  "words" : 11435,
+  "characters" : 72093,
+  "pdfStartPage" : 8,
+  "pdfEndPage" : 47,
+  "pdfSha256" : "1388064409564d3d50a9f9fadb385a2fce9d69a4343e6b07cb0e29710be48132",
+  "corpusSha256" : "24cead1556c9fa52bbca9dd4899f80f54f42b23472820fbd3e4cc6a3533fffed",
+  "cleaning" : {
+    "headerFooterLinesRemoved" : 39,
+    "standaloneNumberLinesRemoved" : 0,
+    "separatorLinesRemoved" : 1,
+    "hyphenJoins" : 94,
+    "hyphenRepeatJoins" : 1,
+    "annotationsRemoved" : 7,
+    "vetoedDiscarded" : 18,
+    "emptiedByAnnotation" : 7,
+    "preambleLinesDiscarded" : 4,
+    "closingLinesDiscarded" : 4,
+    "editorNoteLinesDiscarded" : 2
+  }
+}

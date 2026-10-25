@@ -20,6 +20,6 @@
 
 ## Recorte
 - Do Art. 1º ao último artigo, definido com o comando inspect-pdf
-- Primeira página do recorte: 
-- Última página do recorte: 
+- Primeira página do recorte: 8 (Art. 1º)
+- Última página do recorte: 47 (Art. 65)
 - Ficam fora: capa, ficha catalográfica, sumário, cabeçalhos, rodapés, numeração de página e demais elementos editoriais

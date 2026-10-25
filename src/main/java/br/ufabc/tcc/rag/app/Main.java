@@ -1,8 +1,13 @@
 package br.ufabc.tcc.rag.app;
 
+import br.ufabc.tcc.rag.adapters.corpus.CorpusBuild;
+import br.ufabc.tcc.rag.adapters.corpus.CorpusPipeline;
+import br.ufabc.tcc.rag.adapters.corpus.CorpusWriter;
+import br.ufabc.tcc.rag.adapters.corpus.InspectionPrinter;
 import br.ufabc.tcc.rag.adapters.corpus.PdfTextExtractor;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 public final class Main {
 
@@ -30,6 +35,7 @@ public final class Main {
         }
         switch (args[0]) {
             case "inspect-pdf" -> inspectPdf(config);
+            case "prepare" -> prepare(config);
             default -> System.out.println(args[0] + ": ainda não implementado");
         }
     }
@@ -45,6 +51,17 @@ public final class Main {
         for (int i = 0; i < pages.size(); i++) {
             printPage(i + 1, pages.get(i));
         }
+    }
+
+    private static void prepare(Config config) {
+        Path pdf = config.pdfPath();
+        int startPage = config.pdfStartPage();
+        int endPage = config.pdfEndPage();
+        CorpusBuild build = new CorpusPipeline().build(pdf, startPage, endPage, config.pdfHeaderFooterThreshold());
+        new InspectionPrinter(System.out).print(build);
+        Map<String, Object> stats = new CorpusWriter().write(Path.of("data", "corpus"), build, pdf, startPage, endPage);
+        System.out.println();
+        System.out.println("Corpus gravado em data/corpus. Estatísticas: " + stats);
     }
 
     private static void printPage(int number, List<String> lines) {
