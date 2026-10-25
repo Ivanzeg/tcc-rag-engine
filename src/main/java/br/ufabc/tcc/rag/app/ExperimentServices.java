@@ -25,8 +25,8 @@ public final class ExperimentServices {
     static final Path ADAPTIVE_CHOICE_FILE = CALIBRATION_DIR.resolve("adaptive_choice.json");
     static final Path RESULTS_DIR = Path.of("results");
 
-    private static final String DOCUMENT_ID = "lgpd-13709-2018";
-    private static final String DOCUMENT_VERSION = "v1";
+    static final String DOCUMENT_ID = "lgpd-13709-2018";
+    static final String DOCUMENT_VERSION = "v1";
 
     private final Config config;
     private final Corpus corpus;

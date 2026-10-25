@@ -13,6 +13,8 @@ public final class Config {
     private static final String DB_PASSWORD_ENV = "DB_PASSWORD";
     private static final String OPENAI_API_KEY_ENV = "OPENAI_API_KEY";
 
+    private static final double DEFAULT_CHAT_TEMPERATURE = 0.0;
+
     private final Properties properties;
 
     private Config(Properties properties) {
@@ -151,6 +153,17 @@ public final class Config {
 
     public String chatProvider() {
         return required("chat.provider");
+    }
+
+    public double chatTemperature() {
+        if (raw("chat.temperature") == null) {
+            return DEFAULT_CHAT_TEMPERATURE;
+        }
+        double value = requiredDouble("chat.temperature");
+        if (value < 0.0 || value > 2.0) {
+            throw new IllegalStateException("A chave chat.temperature deve estar entre 0 e 2.");
+        }
+        return value;
     }
 
     public String ollamaBaseUrl() {

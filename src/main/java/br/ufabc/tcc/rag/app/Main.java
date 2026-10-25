@@ -44,6 +44,7 @@ public final class Main {
             case "evaluate" -> evaluate(config, args);
             case "calibrate-adaptive" -> calibrateAdaptive(config);
             case "run-all" -> runAll(config);
+            case "ask" -> ask(config, args);
             default -> System.out.println(args[0] + ": ainda não implementado");
         }
     }
@@ -51,6 +52,19 @@ public final class Main {
     private static void calibrateAdaptive(Config config) {
         try {
             new CalibrateAdaptiveCommand(new ExperimentServices(config)).run();
+        } catch (IllegalStateException e) {
+            System.out.println("Erro: " + e.getMessage());
+            System.exit(1);
+        }
+    }
+
+    private static void ask(Config config, String[] args) {
+        if (args.length != 2) {
+            System.out.println("Uso: ask <id_da_consulta>");
+            System.exit(1);
+        }
+        try {
+            AskSetup.create(config).run(args[1]);
         } catch (IllegalStateException e) {
             System.out.println("Erro: " + e.getMessage());
             System.exit(1);

@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -65,6 +66,15 @@ public final class PgVectorIndex implements VectorIndex {
 
     @Override
     public void reset(String strategy) {
+        bind(strategy, true);
+    }
+
+    public void attach(String strategy) {
+        bind(strategy, false);
+        requireTable();
+    }
+
+    private void bind(String strategy, boolean recreate) {
         if (!STRATEGY_NAME.matcher(strategy).matches()) {
             throw new IllegalArgumentException("Nome de estratégia inválido para tabela: " + strategy);
         }
@@ -75,8 +85,8 @@ public final class PgVectorIndex implements VectorIndex {
                 .table(table)
                 .dimension(dimension)
                 .useIndex(false)
-                .createTable(true)
-                .dropTableFirst(true)
+                .createTable(recreate)
+                .dropTableFirst(recreate)
                 .skipCreateVectorExtension(true)
                 .metadataStorageConfig(DefaultMetadataStorageConfig.builder()
                         .storageMode(MetadataStorageMode.COLUMN_PER_KEY)
@@ -135,6 +145,21 @@ public final class PgVectorIndex implements VectorIndex {
                 .put("hash_corpus", settings.hashCorpus())
                 .put("condicao", strategy)
                 .put("modelo_embedding", settings.modeloEmbedding());
+    }
+
+    private void requireTable() {
+        try (Connection connection = dataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement("SELECT to_regclass(?)")) {
+            statement.setString(1, table);
+            try (ResultSet rs = statement.executeQuery()) {
+                rs.next();
+                if (rs.getString(1) == null) {
+                    throw new IllegalStateException("A tabela " + table + " não existe. Rode run-all antes do ask.");
+                }
+            }
+        } catch (SQLException e) {
+            throw new IllegalStateException("Falha ao conferir a tabela " + table + ": " + e.getMessage(), e);
+        }
     }
 
     private void requireReset() {

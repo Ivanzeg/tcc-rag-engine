@@ -26,6 +26,23 @@ public final class QueryEmbeddingStore {
         this.embeddings = embeddings;
     }
 
+    public QueryEmbeddingStore(Path file, String modelName) {
+        this(file, modelName, null);
+    }
+
+    public float[] read(GoldQuery query) {
+        Entry entry = readEntries().get(query.id());
+        if (entry == null) {
+            throw new IllegalStateException("Não há vetor gravado para " + query.id() + " em " + file
+                    + ". Rode evaluate ou run-all antes do ask.");
+        }
+        if (!entry.questionSha256().equals(Sha256.hex(query.question()))) {
+            throw new IllegalStateException("A pergunta de " + query.id() + " mudou desde que o vetor foi gravado em "
+                    + file + ". Os vetores das consultas são fixos no experimento");
+        }
+        return entry.vector();
+    }
+
     public Map<String, float[]> load(List<GoldQuery> queries) {
         Map<String, Entry> entries = readEntries();
         List<GoldQuery> missing = new ArrayList<>();
